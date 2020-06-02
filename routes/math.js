@@ -4,7 +4,8 @@ const router = express.Router();
 let count = 0;
 
 router.put("/count", (req, res) => {
-  const { count } = req.body;
+  let count = req.body.count;
+  count = count++;
   res.send({ message: `This route has been hit ${count} times` });
 });
 
